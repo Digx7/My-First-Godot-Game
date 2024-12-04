@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cn4lv7ss3u5t0"]
+
+[ext_resource type="FontFile" uid="uid://dhblnr67vyyh0" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_17xnt"]
+
+[resource]
+default_font = ExtResource("1_17xnt")
+default_font_size = 16

@@ -17,7 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Music="*res://Scenes/music.tscn"
+SignalBus="*res://Scenes/AutoLoad/signal_bus.tscn"
+GameManager="*res://Scenes/AutoLoad/game_manager.tscn"
+Ui="*res://Scenes/AutoLoad/ui.tscn"
+Music="*res://Scenes/AutoLoad/music.tscn"
+LevelManager="*res://Scenes/AutoLoad/level_manager.tscn"
 
 [input]
 

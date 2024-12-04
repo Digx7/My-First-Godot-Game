@@ -1,9 +1,17 @@
 extends Node
 
+# Stores global variables
+# Stores active game state
+
 var score = 0 
 
-@onready var score_label = $ScoreLabel
+func _ready():
+	SignalBus.coin_picked_up.connect(add_point)
+	SignalBus.level_reloaded.connect(reset)
+
+func reset():
+	score = 0
 
 func add_point():
 	score += 1 
-	score_label.text = "You collected " + str(score) + " coins."
+	SignalBus.coin_count_updated.emit(score)

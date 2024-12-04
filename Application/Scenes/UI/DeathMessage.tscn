@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://f86vtl63li63"]
+
+[ext_resource type="Theme" uid="uid://cn4lv7ss3u5t0" path="res://Assets/new_theme.tres" id="2_et24e"]
+
+[sub_resource type="Theme" id="Theme_7glmx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2um1l"]
+bg_color = Color(0, 0, 0, 0.803922)
+
+[sub_resource type="Animation" id="Animation_s3110"]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lwpj3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_py6rq"]
+_data = {
+"Death": SubResource("Animation_s3110"),
+"RESET": SubResource("Animation_lwpj3")
+}
+
+[node name="DeathMessage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -102.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7glmx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2um1l")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -51.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_et24e")
+theme_override_colors/font_color = Color(0.898039, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Death"
+libraries = {
+"": SubResource("AnimationLibrary_py6rq")
+}

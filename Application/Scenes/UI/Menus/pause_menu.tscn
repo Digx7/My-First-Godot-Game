@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://yij102ck10hb"]
+
+[ext_resource type="Theme" uid="uid://cn4lv7ss3u5t0" path="res://Assets/new_theme.tres" id="1_03gly"]
+[ext_resource type="Script" path="res://Scripts/UI/Menus/pause_menu.gd" id="1_jsda3"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jsda3")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 374.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 2
+offset_right = 374.0
+offset_bottom = 67.0
+theme = ExtResource("1_03gly")
+theme_override_font_sizes/font_size = 64
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 171.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_03gly")
+text = "Resume"
+
+[node name="OptionsButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_03gly")
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_03gly")
+text = "Quit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

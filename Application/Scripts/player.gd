@@ -11,6 +11,20 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
+	# Handle Pause.
+	if Input.is_action_just_pressed("pause"):
+		if GameManager.game_state == Constants.GameStateTypes.GAMEPLAY:
+			Ui.force_unload_all_ui()
+			Ui.try_load_ui(Ui.PAUSE_MENU_KEY)
+			GameManager.update_game_state(Constants.GameStateTypes.PAUSE_MENU)
+		elif GameManager.game_state == Constants.GameStateTypes.PAUSE_MENU:
+			Ui.force_unload_all_ui()
+			Ui.try_load_ui(Ui.GAME_UI_KEY)
+			GameManager.update_game_state(Constants.GameStateTypes.GAMEPLAY)
+	
+	if not GameManager.game_state == Constants.GameStateTypes.GAMEPLAY:
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

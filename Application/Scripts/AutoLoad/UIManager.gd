@@ -18,6 +18,9 @@ const CREDITS_MENU_KEY = "Credits Menu"
 const QUIT_MENU_KEY = "Quit Menu"
 @onready var quit_menu_packed = preload("res://Scenes/UI/Menus/quit_menu.tscn")
 
+const PAUSE_MENU_KEY = "Pause Menu"
+@onready var pause_menu_packed = preload("res://Scenes/UI/Menus/pause_menu.tscn")
+
 var packed_ui = {}
 var active_ui = {}
 
@@ -39,6 +42,7 @@ func package_ui():
 	packed_ui[OPTIONS_MENU_KEY] = options_menu_packed
 	packed_ui[CREDITS_MENU_KEY] = credits_menu_packed
 	packed_ui[QUIT_MENU_KEY] = quit_menu_packed
+	packed_ui[PAUSE_MENU_KEY] = pause_menu_packed
 
 func try_load_ui_explicit(key, packed_node) -> bool:
 	if active_ui.has(key):
@@ -63,6 +67,11 @@ func try_unload_ui(key) -> bool:
 		return true
 	else:
 		return false
+
+func force_unload_all_ui():
+	for key in active_ui:
+		active_ui[key].queue_free()
+	active_ui.clear()
 
 func on_level_reload():
 	try_load_ui(GAME_UI_KEY)

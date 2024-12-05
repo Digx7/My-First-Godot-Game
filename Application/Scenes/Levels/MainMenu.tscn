@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5vsvl6o0vipy"]
+[gd_scene load_steps=5 format=3 uid="uid://dptpfmam60j6c"]
 
-[ext_resource type="Script" path="res://Scripts/LevelHelpere.gd" id="1_pd00t"]
+[ext_resource type="Script" path="res://Scripts/Helpers/LevelHelpere.gd" id="1_pd00t"]
 [ext_resource type="Texture2D" uid="uid://cwg5hnvuohrkh" path="res://Assets/Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_vs0s5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dxvc"]
@@ -154,6 +154,7 @@ sources/0 = SubResource("TileSetAtlasSource_5dxvc")
 script = ExtResource("1_pd00t")
 level_name = "Main Menu"
 ui_on_load = "Main Menu"
+game_state_on_load = 0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_03520")

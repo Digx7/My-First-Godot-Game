@@ -6,6 +6,8 @@ extends Node
 @onready var level_1_packed = load("res://Scenes/Levels/level_1.tscn")
 @onready var level_2_name = "Level 2"
 @onready var level_2_packed = load("res://Scenes/Levels/level_2.tscn")
+@onready var main_menu_name = "Main Menu"
+@onready var main_menu_packed = load("res://Scenes/Levels/MainMenu.tscn")
 
 var packed_levels = {}
 
@@ -13,10 +15,11 @@ var current_level
 var current_level_packed
 
 func _ready():
+	packed_levels[main_menu_name] = main_menu_packed
 	packed_levels[level_1_name] = level_1_packed
 	packed_levels[level_2_name] = level_2_packed
 	
-	load_level(level_2_packed)
+	load_level_by_name(main_menu_name)
 
 func load_level_by_name(name) -> bool:
 	if not packed_levels.has(name):

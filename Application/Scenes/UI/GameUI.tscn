@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://hx0syn7uiw43"]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="StyleBox" uid="uid://b2qgtq0xaaqya" path="res://Assets/UI_Style_Box.tres" id="1_n4127"]
 [ext_resource type="Texture2D" uid="uid://bnuyefgr8glql" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/coin.png" id="2_qw4lk"]
 [ext_resource type="Theme" uid="uid://cn4lv7ss3u5t0" path="res://Assets/new_theme.tres" id="3_j0t48"]
 [ext_resource type="FontFile" uid="uid://dhblnr67vyyh0" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_8jiy6"]
-[ext_resource type="Script" path="res://Scripts/PlayerScoreUI.gd" id="5_1inao"]
+[ext_resource type="Script" path="res://Scripts/UI/PlayerScoreUI.gd" id="5_1inao"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dl8dw"]
 atlas = ExtResource("2_qw4lk")

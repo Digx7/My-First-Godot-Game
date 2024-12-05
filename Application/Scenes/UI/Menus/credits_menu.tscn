@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv1j3348btbj0"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Theme" uid="uid://cn4lv7ss3u5t0" path="res://Assets/new_theme.tres" id="1_ky2wt"]
-[ext_resource type="Script" path="res://Scripts/BuildNumber.gd" id="2_o0rca"]
+[ext_resource type="Script" path="res://Scripts/UI/Menus/credits_menu.gd" id="1_qqcqs"]
+[ext_resource type="Script" path="res://Scripts/UI/BuildNumber.gd" id="2_o0rca"]
 
 [node name="CreditsMenu" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qqcqs")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -56,3 +57,5 @@ theme = ExtResource("1_ky2wt")
 text = "Build"
 vertical_alignment = 2
 script = ExtResource("2_o0rca")
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

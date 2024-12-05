@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctapvq22tg1dx"]
+[gd_scene load_steps=4 format=3]
 
+[ext_resource type="Script" path="res://Scripts/UI/Menus/quit_menu.gd" id="1_2wkms"]
 [ext_resource type="Theme" uid="uid://cn4lv7ss3u5t0" path="res://Assets/new_theme.tres" id="1_gh8vo"]
-[ext_resource type="Script" path="res://Scripts/BuildNumber.gd" id="2_lkgom"]
+[ext_resource type="Script" path="res://Scripts/UI/BuildNumber.gd" id="2_lkgom"]
 
 [node name="QuitMenu" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2wkms")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -61,3 +62,6 @@ theme = ExtResource("1_gh8vo")
 text = "Build"
 vertical_alignment = 2
 script = ExtResource("2_lkgom")
+
+[connection signal="pressed" from="VBoxContainer/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]

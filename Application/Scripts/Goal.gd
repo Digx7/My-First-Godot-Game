@@ -7,4 +7,5 @@ func _on_body_entered(body):
 
 
 func load_next_level():
+	SaveManager.save_game()
 	LevelManager.load_level_by_name(next_level_name)

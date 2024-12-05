@@ -5,3 +5,5 @@ enum GameStateTypes {
 	GAMEPLAY,
 	PAUSE_MENU
 }
+
+const save_coin_key = "Coins"

@@ -2,6 +2,9 @@ extends Node
 
 # Where all global signals will go
 
+signal game_saved
+signal game_loaded
+
 signal game_state_changed(newState:Constants.GameStateTypes)
 
 signal level_reloaded
